@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environmental Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>🌎 Environmental Dashboard</h1>
+  <button id="refresh">🔁 Refresh Data</button>
+  <div id="cards" class="grid"></div>
+
+  <canvas id="temperatureChart" height="150"></canvas>
+  <canvas id="humidityChart" height="150"></canvas>
+  <canvas id="windspeedChart" height="150"></canvas>
+  <canvas id="rainfallChart" height="150"></canvas>
+  <canvas id="uvChart" height="150"></canvas>
+  <canvas id="aqiChart" height="150"></canvas>
+  <canvas id="pm25Chart" height="150"></canvas>
+
+  <p id="updated"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+body { background-color: #0a0a0f; color: #fff; font-family: Arial, sans-serif; text-align:center; margin:0; padding:0; }
+h1 { color:#00ffff; margin-top:20px; }
+button { padding:10px 20px; border:none; border-radius:20px; cursor:pointer; margin:10px; background:#00d1ff; color:#000; font-weight:bold; }
+button:hover { background:#00ffcc; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:20px; padding:20px; }
+.card { background:#12121a; padding:20px; border-radius:15px; box-shadow:0 0 20px rgba(255,255,255,0.1); }
+.card-title { font-weight:bold; margin-bottom:10px; }
+.card-value { font-size:1.5em; margin-bottom:5px; }
+canvas { margin:20px auto; background:#12121a; border-radius:10px; padding:10px; }
