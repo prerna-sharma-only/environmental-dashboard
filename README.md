@@ -1,111 +1,172 @@
-# Environmental Dashboard
+<div align="center">
 
-A Java-based environmental monitoring dashboard that displays weather and air-quality data for multiple cities through a browser-based interface.
+# 🌍 Environmental Dashboard
 
-## Project Overview
+### A Java-Powered Environmental Monitoring & Visualization System
 
-| Category      | Details                              |
-| ------------- | ------------------------------------ |
-| Project       | Environmental Dashboard              |
-| Backend       | Java                                 |
-| Frontend      | HTML, CSS, JavaScript                |
-| Visualization | Chart.js                             |
-| Server        | Java `HttpServer`                    |
-| Data          | Generated sample environmental data  |
-| Cities        | Bareilly, Delhi, Varanasi, Pune      |
-| Refresh       | Manual and automatic every 5 minutes |
+**Weather • Air Quality • Data Visualization • Java Backend**
 
-## Features
+<br>
 
-| Feature         | Description                                 |
-| --------------- | ------------------------------------------- |
-| City Monitoring | Displays environmental data for four cities |
-| Rainfall        | Shows hourly precipitation data             |
-| UV Index        | Displays UV index values                    |
-| AQI             | Shows Air Quality Index                     |
-| PM2.5           | Displays particulate matter levels          |
-| Temperature     | Hourly temperature visualization            |
-| Humidity        | Hourly humidity visualization               |
-| Wind Speed      | Hourly wind-speed visualization             |
-| Charts          | Interactive line charts using Chart.js      |
-| Auto Refresh    | Updates data automatically every 5 minutes  |
-| Manual Refresh  | Allows users to refresh data instantly      |
+`JAVA`   `JAVASCRIPT`   `HTML5`   `CSS3`   `CHART.JS`
 
-## Technologies Used
+</div>
 
-| Technology        | Purpose                            |
-| ----------------- | ---------------------------------- |
-| Java              | Backend server and data generation |
-| HTML5             | Dashboard structure                |
-| CSS3              | Styling and responsive layout      |
-| JavaScript        | Data fetching and dashboard logic  |
-| Chart.js          | Data visualization                 |
-| Java `HttpServer` | Serves frontend and API endpoints  |
+---
+
+## About the Project
+
+**Environmental Dashboard** is a lightweight web-based monitoring system built using **Java and modern frontend technologies**.
+
+The application provides environmental information for **Bareilly, Delhi, Varanasi, and Pune**, with both summary cards and interactive hourly charts.
+
+The backend is implemented using Java's built-in `HttpServer`, while the frontend uses JavaScript and Chart.js to fetch, process, and visualize the data.
+
+---
+
+## Project Information
+
+| Category              | Details                         |
+| --------------------- | ------------------------------- |
+| Project Name          | Environmental Dashboard         |
+| Project Type          | Full-Stack Web Application      |
+| Backend               | Java                            |
+| Frontend              | HTML5, CSS3, JavaScript         |
+| Visualization         | Chart.js                        |
+| Server                | Java `HttpServer`               |
+| Data Format           | JSON                            |
+| Cities                | Bareilly, Delhi, Varanasi, Pune |
+| Data Refresh          | Manual + Automatic              |
+| Auto Refresh Interval | 5 Minutes                       |
+| Status                | Completed / Functional          |
+
+---
+
+## Key Features
+
+| Feature               | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| 🌦 Weather Monitoring | Temperature, humidity, wind speed and rainfall  |
+| ☀️ UV Monitoring      | Hourly UV index visualization                   |
+| 🌫 Air Quality        | AQI and PM2.5 monitoring                        |
+| 📊 Interactive Charts | Hourly data visualization using Chart.js        |
+| 🏙 Multi-City Support | Monitors four different cities                  |
+| 🔄 Manual Refresh     | Refresh data instantly using the refresh button |
+| ⟳ Auto Refresh        | Automatically updates data every 5 minutes      |
+| ⚡ Java Backend        | Lightweight HTTP server using Java              |
+| 📡 JSON API           | Environmental data exposed through `/data`      |
+
+---
+
+## Environmental Metrics
+
+| Metric      | Description               | Visualization |
+| ----------- | ------------------------- | ------------- |
+| Temperature | Hourly temperature values | Line Chart    |
+| Humidity    | Hourly humidity values    | Line Chart    |
+| Wind Speed  | Hourly wind speed         | Line Chart    |
+| Rainfall    | Hourly precipitation      | Line Chart    |
+| UV Index    | Hourly UV index           | Line Chart    |
+| AQI         | Air Quality Index         | Line Chart    |
+| PM2.5       | Fine particulate matter   | Line Chart    |
+
+---
+
+## Supported Cities
+
+| City     | Monitoring            |
+| -------- | --------------------- |
+| Bareilly | Weather + Air Quality |
+| Delhi    | Weather + Air Quality |
+| Varanasi | Weather + Air Quality |
+| Pune     | Weather + Air Quality |
+
+---
+
+## Technology Stack
+
+| Technology        | Role                                  |
+| ----------------- | ------------------------------------- |
+| Java              | Backend server and data generation    |
+| Java `HttpServer` | HTTP server implementation            |
+| HTML5             | Webpage structure                     |
+| CSS3              | User interface and responsive layout  |
+| JavaScript        | API communication and dashboard logic |
+| Chart.js          | Interactive data visualization        |
+| JSON              | Data exchange format                  |
+
+---
 
 ## Project Structure
 
-| File / Folder         | Purpose                       |
-| --------------------- | ----------------------------- |
-| `frontend/index.html` | Dashboard structure           |
-| `frontend/script.js`  | Data fetching and chart logic |
-| `frontend/style.css`  | Dashboard styling             |
-| `EnvServer.java`      | Java HTTP server and API      |
-| `README.md`           | Project documentation         |
-| `.gitignore`          | Git ignored files             |
-
-## Dashboard Metrics
-
-| Metric      | Description              |
-| ----------- | ------------------------ |
-| Temperature | Hourly temperature       |
-| Humidity    | Hourly relative humidity |
-| Wind Speed  | Hourly wind speed        |
-| Rainfall    | Hourly precipitation     |
-| UV Index    | Hourly UV index          |
-| AQI         | Air Quality Index        |
-| PM2.5       | Fine particulate matter  |
-
-## How to Run
-
-### Requirements
-
-| Requirement | Version            |
-| ----------- | ------------------ |
-| Java JDK    | 8 or later         |
-| Web Browser | Any modern browser |
-
-### Installation
-
-Clone the repository:
-
-```bash
-git clone <your-repository-url>
-cd java-environmental-dashboard
+```text
+java-environmental-dashboard/
+│
+├── frontend/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── EnvServer.java
+├── README.md
+└── .gitignore
 ```
 
-Compile the Java server:
+---
 
-```bash
-javac EnvServer.java
-```
-
-Start the server:
-
-```bash
-java EnvServer
-```
-
-Open the dashboard in your browser:
+## System Architecture
 
 ```text
-http://localhost:10000/
+                 ┌──────────────────────┐
+                 │      Web Browser     │
+                 │  Environmental UI    │
+                 └──────────┬───────────┘
+                            │
+                            │ HTTP
+                            ▼
+                 ┌──────────────────────┐
+                 │    Java HttpServer   │
+                 │     EnvServer.java   │
+                 └──────────┬───────────┘
+                            │
+                 ┌──────────┴───────────┐
+                 │                      │
+                 ▼                      ▼
+        ┌─────────────────┐    ┌─────────────────┐
+        │ Frontend Files  │    │   /data API     │
+        │ HTML/CSS/JS     │    │  JSON Response  │
+        └─────────────────┘    └────────┬────────┘
+                                        │
+                                        ▼
+                              ┌──────────────────┐
+                              │ Environmental    │
+                              │ Sample Data      │
+                              └──────────────────┘
 ```
+
+---
+
+## How the Application Works
+
+| Step | Process                                                 |
+| ---: | ------------------------------------------------------- |
+|   01 | Java starts the HTTP server                             |
+|   02 | Server listens on port `10000`                          |
+|   03 | Frontend files are served from the `frontend` directory |
+|   04 | Java generates environmental sample data                |
+|   05 | `/data` returns the data as JSON                        |
+|   06 | JavaScript fetches the JSON response                    |
+|   07 | Dashboard cards display the latest values               |
+|   08 | Chart.js renders hourly graphs                          |
+|   09 | Data automatically refreshes every 5 minutes            |
+
+---
 
 ## API
 
-The Java server provides the following endpoint:
+### Environmental Data Endpoint
 
-| Method | Endpoint | Description                                         |
+| Method | Endpoint | Purpose                                             |
 | ------ | -------- | --------------------------------------------------- |
 | `GET`  | `/data`  | Returns environmental data for all supported cities |
 
@@ -115,38 +176,114 @@ Example:
 http://localhost:10000/data
 ```
 
-## How It Works
+The response contains hourly weather and air-quality information for each city.
 
-| Step | Process                                       |
-| ---- | --------------------------------------------- |
-| 1    | Java starts an HTTP server on port `10000`    |
-| 2    | The server serves the frontend files          |
-| 3    | Java generates environmental sample data      |
-| 4    | The `/data` endpoint returns the data as JSON |
-| 5    | JavaScript fetches the JSON data              |
-| 6    | Dashboard cards display the latest values     |
-| 7    | Chart.js visualizes the hourly data           |
-| 8    | Data refreshes automatically every 5 minutes  |
+---
+
+## Installation & Setup
+
+### Requirements
+
+| Requirement | Version        |
+| ----------- | -------------- |
+| Java JDK    | 8+             |
+| Web Browser | Modern Browser |
+| Git         | Recommended    |
+
+### Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd java-environmental-dashboard
+```
+
+### Compile
+
+```bash
+javac EnvServer.java
+```
+
+### Run
+
+```bash
+java EnvServer
+```
+
+### Open the Dashboard
+
+```text
+http://localhost:10000/
+```
+
+---
 
 ## Data Source
 
-The current version uses randomly generated sample data through Java's `Random` class.
+The current implementation uses Java's `Random` class to generate environmental sample data.
 
-The project is designed so that a live weather and air-quality API can be integrated in the future.
+This approach is used for demonstration and development purposes.
+
+The architecture can be extended to integrate real-time weather and air-quality APIs.
+
+---
 
 ## Future Improvements
 
-| Planned Improvement  | Description                                      |
-| -------------------- | ------------------------------------------------ |
-| Live API Integration | Replace sample data with real environmental data |
-| Historical Data      | Store and display previous measurements          |
-| Location Selection   | Allow users to select cities dynamically         |
-| Date Filtering       | Add hourly and daily date filters                |
-| Deployment           | Deploy the application online                    |
-| Database             | Store environmental data for analysis            |
+| Improvement    | Description                                 |
+| -------------- | ------------------------------------------- |
+| Live Data      | Integrate real weather and air-quality APIs |
+| Database       | Store historical environmental data         |
+| Authentication | Add user authentication                     |
+| City Selection | Allow users to dynamically select cities    |
+| Date Filters   | Add hourly, daily and historical filters    |
+| Alerts         | Add AQI and weather threshold alerts        |
+| Deployment     | Deploy the application to a cloud platform  |
+| Analytics      | Add environmental trend analysis            |
+
+---
+
+## Author
+
+| Field        | Details                                              |
+| ------------ | ---------------------------------------------------- |
+| Name         | **PRERNA SHARMA**                                    |
+| Role         | Full-Stack Developer                                 |
+| Project      | Environmental Dashboard                              |
+| Technologies | Java, JavaScript, HTML, CSS, Chart.js                |
+| GitHub       | https://github.com/prerna-sharma-only                |
+| LinkedIn     | https://www.linkedin.com/in/prerna-sharma-10425a360/ |
+
+---
+
+## Project Highlights
+
+| Area                 | Implementation             |
+| -------------------- | -------------------------- |
+| Backend Development  | Java HTTP Server           |
+| API Development      | Custom `/data` endpoint    |
+| Frontend Development | HTML, CSS and JavaScript   |
+| Data Handling        | JSON                       |
+| Visualization        | Chart.js                   |
+| Automation           | 5-minute automatic refresh |
+| Architecture         | Client–Server Architecture |
+
+---
 
 ## License
 
-This project is intended for educational and personal use.
+This project is developed for **educational, learning, and portfolio purposes**.
+
+---
+
+<div align="center">
+
+### Environmental Dashboard
+
+**Built with Java and Web Technologies**
+
+`Java` • `JavaScript` • `HTML5` • `CSS3` • `Chart.js`
+
+</div>
+
 
 
