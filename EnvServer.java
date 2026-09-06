@@ -121,79 +121,121 @@ public class EnvServer {
     }
 }
 
-// // You are creating a list of cities whose data you want to generate.
-// Random random = new Random() means: “I will generate random numbers later.”
-// Instead of getting real temperatures from an API,
-// it will make up values like 28°C, 30°C, 33°C, etc. randomly — just for
-// testing.
+```java
+// You are creating a list of cities whose data you want to generate.
+// Random random = new Random() means:
+// "I will generate random numbers later."
+//
+// Instead of getting real temperature data from an API,
+// the program generates random values such as 28°C, 30°C, 33°C, etc.
+// These values are only used for testing.
 
-// step 3)When the website asks for data…
-// The handle() method runs automatically whenever your frontend requests
-// http://localhost:3000/data.
+// Step 3: When the website requests data...
+//
+// The handle() method runs automatically whenever the frontend sends
+// a request to http://localhost:3000/data.
+//
 // Think of it like:
-// “When someone knocks on /data, this function opens the door and gives them
-// some data.”
-// Starting the JSON message
-// JSON ek data format hota hai (jaise dictionary).
-// Ye line ek empty JSON object start kar rahi hai.
-// It begins with a { — just like writing a sentence that will have many parts.
-// Ye loop 4 baar chalega — Bareilly, Delhi, Varanasi, Pune ke liye.Har city ke
-// liye alag random data banega.
-// JSON me likh rahe hain: "Bareilly": { ...data... }Is tarah har city ke liye
-// alag section banega.
-// Ye part har city ke liye weather data banata hai:
-// temperature_2m → 24 hourly temperatures (20°C se 40°C ke beech random
-// numbers)
-// air quality data-hr city ke liy
-// Ye part air data ke liye hai.
-// aqi aur pm2_5 dono ke 24 hourly values banata hai.
+// "When someone knocks on the /data door, this function opens the door
+// and sends them some data."
+
+// Starting the JSON response.
+//
+// JSON is a data format, similar to a dictionary or a collection
+// of key-value pairs.
+//
+// This line starts an empty JSON object.
+// It begins with { because the object will contain multiple sections.
+
+// This loop runs 4 times — once for each city:
+// Bareilly, Delhi, Varanasi, and Pune.
+//
+// For each city, separate random data is generated.
+
+// The JSON structure contains a section for each city, for example:
+// "Bareilly": { ...data... }
+//
+// In this way, every city gets its own section.
+
+// This part generates weather data for each city:
+//
+// temperature_2m → 24 hourly temperature values,
+// with random numbers between 20°C and 40°C.
+
+// Air-quality data is also generated for each city.
+//
+// This part creates air-quality information.
+//
+// aqi and pm2_5 each contain 24 hourly values.
+//
 // Example:
 // AQI → [75, 120, 150, ...]
 // PM2.5 → [40, 60, 80, ...]
-// Har city ke baad ek comma lagta hai JSON me —
-// but last city ke baad nahi lagta, warna format galat ho jaata h.
 
+// A comma is added after each city in the JSON object.
+// However, the last city should not have a trailing comma,
+// because that would make the JSON format invalid.
+
+// Example JSON structure:
+//
 // {
-// "Bareilly": {
-// "weather": {
-// "hourly": {
-// "temperature_2m": [22, 25, 27, ...],
-// "humidity_2m": [60, 65, 70, ...],
-// "windspeed_10m": [3, 5, 7, ...],
-// "precipitation": [0, 1, 2, ...],
-// "uv_index": [5, 6, 8, ...]
+//   "Bareilly": {
+//     "weather": {
+//       "hourly": {
+//         "temperature_2m": [22, 25, 27, ...],
+//         "humidity_2m": [60, 65, 70, ...],
+//         "windspeed_10m": [3, 5, 7, ...],
+//         "precipitation": [0, 1, 2, ...],
+//         "uv_index": [5, 6, 8, ...]
+//       }
+//     },
+//     "air": {
+//       "hourly": {
+//         "aqi": [100, 150, 130, ...],
+//         "pm2_5": [50, 70, 65, ...]
+//       }
+//     }
+//   },
+//   "Delhi": { ... },
+//   "Varanasi": { ... },
+//   "Pune": { ... }
 // }
-// },
-// "air": {
-// "hourly": {
-// "aqi": [100, 150, 130, ...],
-// "pm2_5": [50, 70, 65, ...]
-// }
-// }
-// },
-// "Delhi": { ... },
-// "Varanasi": { ... },
-// "Pune": { ... }
-// }
-// line 3 lines
-// exchange ek object hai jo server aur browser ke beech communication handle
-// karta hai.
-// Jab browser /data request bhejta hai, to server ko ye exchange object milta
-// hai jisme
-// → request info hoti hai
-// → aur response bhejne ke liye channel milta hai.
-// json.toString() → JSON ko string banata hai.
-// .getBytes() → us string ko bytes me convert karta hai (kyunki data internet
-// par bytes me jaata hai).
-// .length → kitne bytes hai ye count karta hai.
-// Agar JSON = {"city":"Bareilly"}
-// to uske bytes = 20 bytes ke aaspaas honge, aur yahi length browser ko batayi
-// jaati hai.
-// Ye line browser ko batati hai:
-// “Main tumhe 200 (OK) response bhej raha hoon, aur itne bytes ka data aayega"
-// Java me, stream ka matlab hai ek direction me data flow —
-// “output stream” → matlab server → browser.
-//// Ye final step hai — data actually browser tak pahuchta hai.
-// 200 → success code (HTTP OK).
-// os.write() → ye line JSON data browser ko send karti hai.
-// os.close() → connection close karta hai.
+
+// The exchange object handles communication between the server and
+// the browser.
+//
+// When the browser sends a request to /data, the server receives
+// an exchange object containing:
+// → information about the request
+// → a channel through which the server can send the response.
+
+// json.toString() converts the JSON object into a string.
+//
+// .getBytes() converts that string into bytes,
+// because data is transmitted over the network as bytes.
+//
+// .length tells us how many bytes the data contains.
+//
+// For example:
+// If the JSON is {"city":"Bareilly"},
+// its byte length will be around 20 bytes.
+// This length is then provided to the browser.
+
+// This line tells the browser:
+// "I am sending you a 200 (OK) response,
+// and the response contains this many bytes."
+
+// In Java, a stream represents a flow of data in one direction.
+//
+// An output stream means:
+// server → browser.
+
+// This is the final step where the data is actually sent
+// from the server to the browser.
+//
+// 200 → HTTP success status code (OK).
+//
+// os.write() → sends the JSON data to the browser.
+//
+// os.close() → closes the connection after the data has been sent.
+```
